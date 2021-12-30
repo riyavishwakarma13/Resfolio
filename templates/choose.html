@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Choose {% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+{% block body %}
+
+<body>
+    <div class="position-relative">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow position-relative " style="background-color: #520dc2 ">
+            <div class="container-fluid my-1 ">
+                <a class="navbar-brand " href="# ">Resfolio</a>
+                <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item ">
+                            <a class="nav-link active " aria-current="page " href="/choose/ ">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active " aria-current="page " href="/contact/ ">Contact</a>
+                        </li>
+                    </ul>
+                    <form class=" d-grid gap-2 d-md-flex justify-content-md-end ">
+                        <a class="btn btn-outline-success" href="/login/" role="button" name="logout" id="logout">Logout</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container text-center top-0 ">
+        <img src="/static/images/example.png " height="300 " class="img-fluid " alt="... ">
+    </div>
+    <div class="container w-50 p-3 ">
+        <label for="choosing "><strong><h3> What Do You Want To Make?</h3></strong> </label>
+        <div class="d-grid gap-2 col-5 mx-auto ">
+            <a class="btn " href="/resumeindex/ " role="button " style="position:relative; left: -210px; top: 1px; font-size: large; color: white; background-color: #5e20c2; ">Resume</a>
+        </div>
+        <div class="d-grid gap-2 col-5 mx-auto ">
+            <a class="btn " href="/portfolioindex/ " role="button " style="position:relative; left: 110px; top: -40px; font-size: large; color: white; background-color: #5e20c2; ">Portfolio</a>
+        </div>
+    </div>
+</body>
+{% endblock body %}
+
+<script src="/static/js/bootstrap.js ">
+</script>
+
+</html>

@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resfolio</title>
+    <link href="/static/css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+</head>
+
+
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <div class="postion-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark shadow position-relative " style="background-color: #520dc2 ">
+                <div class="container-fluid my-1 ">
+                    <a class="navbar-brand " href="# ">Resfolio</a>
+                    <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="navbar-toggler-icon "></span>
+                </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item ">
+                                <a class="nav-link active " aria-current="page " href="/choose/ ">Home</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active " aria-current="page " href="/contact/ ">Contact</a>
+                            </li>
+                        </ul>
+                        <!-- <form class=" d-grid gap-2 d-md-flex justify-content-md-end "> -->
+                        <a class="btn btn-outline-success " href="/login/ " role="button ">Logout</a>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="flex-grow-1 d-flex justify-content-center">
+
+            <!-- partial:index.partial.html -->
+            <div id="javascript_header">
+            </div>
+            <form action="POST">
+                <div class="form__header">
+                    <h1>Build Your Resume</h1>
+                    <p>Dashboard</p>
+                </div>
+                <div class="line-break">
+                </div>
+                <a class="button" href="/create-resume/"> Create Resume</a>
+                <div class="line-break">
+                </div>
+                <a class="button" href="/resume/"> View Resume</a>
+                <div class="line-break">
+                </div>
+            </form>
+        </div>
+        <!-- partial -->
+        <script src="/static/js/script2.js">
+        </script>
+    </div>
+</body>
+
+</html>

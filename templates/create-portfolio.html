@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resfolio</title>
+    <link href="/static/css/style2.css" rel="stylesheet" />
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <div class="postion-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark shadow position-relative " style="background-color: #520dc2 ">
+                <div class="container-fluid my-1 ">
+                    <a class="navbar-brand " href="# ">Resfolio</a>
+                    <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="navbar-toggler-icon "></span>
+                </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item ">
+                                <a class="nav-link active " aria-current="page " href="/choose/ ">Home</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active " aria-current="page " href="/contact/ ">Contact</a>
+                            </li>
+                        </ul>
+                        <!-- <form class=" d-grid gap-2 d-md-flex justify-content-md-end "> -->
+                        <a class="btn btn-outline-success " href="/login/ " role="button ">Logout</a>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="flex-grow-1 d-flex justify-content-center">
+            <!-- partial:index.partial.html -->
+            <div id="javascript_header">
+            </div>
+            <form action="/create-portfolio/" method="post">
+                {% csrf_token %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{message.tags}}" {% endif %} style="color:red;">{{message}}</li>
+                        {% endfor %}
+                </ul>
+                <div class="form__header">
+                    <h1>Build Your Portfolio</h1>
+                    <p>Enter the fields below to generate your portfolio.</p>
+                </div>
+                <h2 align="center">Portfolio Info</h2>
+                <table align="center" cellpadding="10">
+                    <!--------------------- template url ------------------------------------------>
+                    <div class="form-group">
+                        <label for="template">Template Url<span>*</span></label>
+                        <input id="template_url" name="template_url" data-sb-validations="required" value="{{portfolio_info.template_url}}" type="text" />
+                        <div class="error" id="name__error">
+                        </div>
+                    </div>
+                    <!------------------------ Full Name --------------------------------------->
+                    <div class="form-group">
+                        <label for="name">Full Name<span>*</span></label>
+                        <input id="name" name="name" value="{{portfolio_info.name}}" type="text" />
+                        <div class="error" id="name__error">
+                        </div>
+                    </div>
+
+                    <!-------------------------- Profession ------------------------------------->
+                    <div class="form-group">
+                        <label for="prof">Profession</label>
+                        <input id="prof" name="prof" value="{{portfolio_info.prof}}" type="text" />
+                    </div>
+
+                    <!-------------------------- About ------------------------------------->
+                    <div class="form-group">
+                        <label for="about">About You</label>
+                        <textarea id="about" name="about_info" placeholder="{{portfolio_info.about_info}}"></textarea>
+                    </div>
+                    <!-------------------------- Project 1 Title ------------------------------------->
+                    <div class="form-group">
+                        <label for="title" class="p1_title">Project 1 Title</label>
+                        <input id="p1_title" name="p1_title" value="{{portfolio_info.p1_title}}" type="text" />
+                    </div>
+                    <!-------------------------- Project 1 content ------------------------------------->
+                    <div class="form-group">
+                        <label for="p1_content">Project 1 content</label>
+                        <textarea id="p1_content" name="p1_content" placeholder="{{portfolio_info.p1_content}}"></textarea>
+                    </div>
+                    <!-------------------------- Project 1 Url ------------------------------------->
+                    <div class="form-group">
+                        <label for="p1_url" class="p1_url">Project 1 Url</label>
+                        <input id="p1_url" name="p1_url" value="{{portfolio_info.p1_url}}" type="text" />
+                    </div>
+                    <!-------------------------- Project 2 Title ------------------------------------->
+                    <div class="form-group">
+                        <label for="title" class="p2_title">Project 2 Title</label>
+                        <input id="p2_title" name="p2_title" value="{{portfolio_info.p2_title}}" type="text" />
+                    </div>
+                    <!-------------------------- Project 2 content ------------------------------------->
+                    <div class="form-group">
+                        <label for="p2_content">Project 2 content</label>
+                        <textarea id="p2_content" name="p2_content" placeholder="{{portfolio_info.p2_content}}"></textarea>
+                    </div>
+                    <!-------------------------- Project 2 Url ------------------------------------->
+                    <div class="form-group">
+                        <label for="p2_url" class="p2_url">Project 2 Url</label>
+                        <input id="p2_url" name="p2_url" value="{{portfolio_info.p2_url}}" type="text" />
+                    </div>
+                    <!-------------------------- Project 3 Title ------------------------------------->
+                    <div class="form-group">
+                        <label for="title" class="p3_title">Project 3 Title</label>
+                        <input id="p3_title" name="p3_title" value="{{portfolio_info.p3_title}}" type="text" />
+                    </div>
+                    <!-------------------------- Project 3 content ------------------------------------->
+                    <div class="form-group">
+                        <label for="p3_content">Project 3 content</label>
+                        <textarea id="p3_content" name="p3_content" placeholder="{{portfolio_info.p3_content}}"></textarea>
+                    </div>
+                    <!-------------------------- Project 3 Url ------------------------------------->
+                    <div class="form-group">
+                        <label for="p3_url" class="p3_url">Project 3 Url</label>
+                        <input id="p3_url" name="p3_url" value="{{portfolio_info.p3_url}}" type="text" />
+                    </div>
+                    <!---------------------- Instagram ------------------------------------->
+                    <div class="form-group">
+                        <label for="instagram" class="instagram">Instagram</label>
+                        <input id="instagram" name="instagram" value="{{portfolio_info.instagram}}" type="text" />
+                    </div>
+
+                    <!---------------------- Github ------------------------------------->
+                    <div class="form-group">
+                        <label for="github" class="github">Github</label>
+                        <input id="github" name="github" value="{{portfolio_info.github}}" type="text" />
+                    </div>
+                    <!---------------------- linkedin ------------------------------------->
+                    <div class="form-group">
+                        <label for="linkedin" class="linkedin">Linkedin</label>
+                        <input id="linkedin" name="linkedin" value="{{portfolio_info.linkedin}}" type="text" />
+                    </div>
+                    <!---------------------- gmail ------------------------------------->
+                    <div class="form-group">
+                        <label for="gmail" class="gmail">Gmail</label>
+                        <input id="gmail" name="gmail" value="{{portfolio_info.gmail}}" type="text" />
+                    </div>
+                    <!--------------------------Template number----------------------------------->
+                    <tr>
+                        <td>Choose a Template</td>
+                        <td>
+                            <select name="templates" id="templates" value="{{portfolio_info.templates}}">
+                        <option value="1" name="Template-1" id="Template-1" >Template 1</option>
+                        <option value="2" name="Template-2" id="Template-2" >Template 2</option>
+                        <option value="3" name="Template-3" id="Template-3" >Template 3</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <!----------------------- Submit ------------------------------->
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" class="btn btn-success" value="Add">
+                            <div class="line-break">
+                                <a class="button" style="background-color:red;" href="/portfolioindex/">Back to home</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!-- partial -->
+        <script src="/static/js/script2.js">
+        </script>
+    </div>
+</body>
+
+</html>

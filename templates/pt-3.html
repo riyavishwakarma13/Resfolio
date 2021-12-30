@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% if portfolio_info.name %} {{portfolio_info.name}}'s Portfolio {% endif %}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/css/styles333.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+            <li class="sidebar-nav-item"><a href="#about">About</a></li>
+            <li class="sidebar-nav-item"><a href="#projects">Projects</a></li>
+            <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+
+            {% if portfolio_info.name%}
+            <h1 class="mb-1" style="color: white;">{{portfolio_info.name}}</h1>
+            <h3 class="mb-5" style="color: white;"><em>{{portfolio_info.prof}}</em></h3>
+            <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+        </div>{% endif %}
+    </header>
+    <!-- About-->
+    <section class="content-section bg-light" id="about">
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10">
+
+                    {% if portfolio_info.about_info %}
+                    <h2>About Me</h2>
+                    <p class="lead mb-5">
+                        {{portfolio_info.about_info}}
+                    </p>
+                    <a class="btn btn-dark btn-xl" href="#projects">See projects</a>
+                </div>{% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- Services-->
+    <section class="content-section bg-primary text-white text-center" id="projects">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading">
+                <h2 class="mb-5">Projects</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                {% if portfolio_info.p1_title %}
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><a href="{{portfolio_info.p1_url}}"><i class="icon-screen-smartphone"></i></a></span>
+                    <h4><strong>{{portfolio_info.p1_title}}</strong></h4>
+                    <p class="text-faded mb-0">{{portfolio_info.p1_content}}</p>
+                </div> {% endif %} {% if portfolio_info.p2_title %}
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><a href="{{portfolio_info.p2_url}}"><i class="icon-pencil"></i></a></span>
+                    <h4><strong>{{portfolio_info.p2_title}}</strong></h4>
+                    <p class="text-faded mb-0">{{portfolio_info.p2_content}}</p>
+                </div> {% endif %} {% if portfolio_info.p3_title %}
+                <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><a href="{{portfolio_info.p3_url}}"><i class="icon-like"></i></a></span>
+                    <h4><strong>{{portfolio_info.p3_title}}</strong></h4>
+                    <p class="text-faded mb-0">{{portfolio_info.p3_content}}</p>
+                </div> {% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+
+            {% if portfolio_info.instagram %}
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="{{portfolio_info.instagram}}"><i class="icon-social-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="{{portfolio_info.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="{{portfolio_info.github}}"><i class="icon-social-github"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="{{portfolio_info.google}}"><i class="icon-social-google"></i></a>
+                </li>
+            </ul>
+        </div> {% endif %}
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/static/js/scripts333.js"></script>
+</body>
+
+</html>
