@@ -1,3 +1,4 @@
 # Resfolio
-It is a Resume and portfolio builder
-Created Using HTML, CSS JavaScript and Bootstrap for frontend and Django, REST API and SQLite for backend
+It is a Resume and portfolio builder.
+Frontend: HTML, CSS JavaScript and Bootstrap.
+Backend: Django, REST API and SQLite.
